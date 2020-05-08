@@ -1,0 +1,405 @@
+<html>
+<head>
+<title>covid19stats</title>
+
+<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+<meta charset="utf-8">
+    <link rel="stylesheet" href="projects.css">
+
+
+
+<style>
+    #chart {
+        max-width: 650px;
+        margin: 35px auto;
+    }
+    </style>
+
+
+<style>
+.dropbtn {
+  background-color: 	#000000;
+  color: white;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+left: 61%;
+  top: 18%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+
+.pos
+{
+margin:0;
+ margin: 0;
+  position: absolute;
+right: 99%;
+  top: 50%;
+ left: 0%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 100px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+<!-----NavigationBar----->
+<section id="nav-bar">
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <a class="navbar-brand" "><img src="logo.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" onclick="window.location.href='index.html';">Live </a>
+
+    
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+       
+
+</section>
+
+
+
+
+
+<div class="dropdown">
+<div class="vertical-center">
+  <button onclick="myFunction()" class="dropbtn">Select State</button>
+  <div id="myDropdown" class="dropdown-content">
+
+
+
+
+
+
+
+
+<a href="ap.html">Andhra Pradesh</a>
+<a href="Andaman and Nicobar Islands">Andaman and Nicobar Islands</a>
+<a href="Arunachal Pradesh">Arunachal Pradesh</a>
+<a href="Assam">Assam</a>
+<a href="Bihar">Bihar</a>
+<a href="Chandigarh">Chandigarh</a>
+<a href="Chhattisgarh">Chhattisgarh</a>
+<a href="Dadar and Nagar Haveli">Dadar and Nagar Haveli</a>
+<a href="Daman and Diu">Daman and Diu</a>
+<a href="Delhi">Delhi</a>
+<a href="Lakshadweep">Lakshadweep</a>
+<a href="Puducherry">Puducherry</a>
+<a href="Goa">Goa</a>
+<a href="Gujarat">Gujarat</a>
+<a href="Haryana">Haryana</a>
+<a href="Himachal Pradesh">Himachal Pradesh</a>
+<a href="Jammu and Kashmir">Jammu and Kashmir</a>
+<a href="Jharkhand">Jharkhand</a>
+<a href="Karnataka">Karnataka</a>
+<a href="Kerala">Kerala</a>
+<a href="Madhya Pradesh">Madhya Pradesh</a>
+<a href="Maharashtra">Maharashtra</a>
+<a href="Manipur">Manipur</a>
+<a href="Meghalaya">Meghalaya</a>
+<a href="Mizoram">Mizoram</a>
+<a href="Nagaland">Nagaland</a>
+<a href="Odisha">Odisha</a>
+<a href="Punjab">Punjab</a>
+<a href="Rajasthan">Rajasthan</a>
+<a href="Sikkim">Sikkim</a>
+<a href="Tamil Nadu">Tamil Nadu</a>
+<a href="Telangana">Telangana</a>
+<a href="Tripura">Tripura</a>
+<a href="Uttar Pradesh">Uttar Pradesh</a>
+<a href="Uttarakhand">Uttarakhand</a>
+<a href="West Bengal">West Bengal</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+  </div>
+</div>
+
+
+
+
+</script>
+
+
+<div class="pos">
+
+<img src="coovid.jpg" alt="Logo" width="95" height="3500">
+
+</div>
+
+
+
+
+<h1>Covidstats INDIA</h1>
+
+
+
+<h2> Total Cases:53,345</h2>
+<h3>  Recovered:15,393 </h3>
+
+<div id="app"></div>
+
+  <div id="html">
+          &lt;div id=&quot;chart&quot;&gt;&#10;            &lt;ReactApexChart options={this.state.options} series={this.state.series} type=&quot;area&quot; height=&quot;350&quot; /&gt;&#10;          &lt;/div&gt;
+  </div>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/prop-types@15.6.2/prop-types.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+  <script src="https://unpkg.com/react-apexcharts@1.1.0/dist/react-apexcharts.iife.min.js"></script>
+
+  <script type="text/babel">
+
+    class AreaChart extends React.Component {
+      
+      constructor(props) {
+        super(props);
+
+        this.state = {
+          options: {
+            dataLabels: {
+              enabled: false
+            },
+            stroke: {
+              curve: 'smooth'
+            },
+
+
+            xaxis: {
+              type: 'datetime',
+              categories: ["2020-05-07T00:00:00", "2020-05-07T01:30:00", "2020-05-07T02:30:00",
+                "2020-05-07T03:30:00", "2020-05-07T04:30:00", "2020-05-07T05:30:00",
+                "2020-05-07T06:30:00"
+              ],
+            },
+            tooltip: {
+              x: {
+                format: 'dd/MM/yy HH:mm'
+              },
+            }
+          },
+          series: [{
+            name: 'Positive',
+            data: [31, 40, 28, 51, 42, 109, 100]
+          }, {
+            name: 'Recovered',
+            data: [1, 2, 5, 2, 4, 5, 21]
+          }],
+        }
+      }
+
+      render() {
+        return (
+          <div>
+            <div id="chart">
+              <ReactApexChart options={this.state.options} series={this.state.series} type="area" height="350" />
+            </div>
+            <div id="html-dist">
+            </div>
+          </div>
+        );
+      }
+    }
+
+    const domContainer = document.querySelector('#app');
+    ReactDOM.render(React.createElement(AreaChart), domContainer);
+
+  </script>
+                              
+
+
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+
+
+
+<h4> Please select your state</h4>
+
+
+
+
+
+<iframe src="https://www.covid19india.org/deepdive"width="1270px" height="3000px"   >
+  <p>Your browser does not support iframes.</p>
+</div>
+</div>
+<hr class="line">
+</iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<div class="footer">
+  <p>&copy2020 by Covidstats<a href="https://harisuriyakr.github.io"> Covidstats</a></p>
+
+</div>
+
+
+
+</html>
